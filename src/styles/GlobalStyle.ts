@@ -2,6 +2,9 @@ import { createGlobalStyle } from "styled-components";
 import "typeface-inter";
 
 export const GlobalStyle = createGlobalStyle`
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
 :root {
     --brand1: #4529E6;
     --brand2: #5126EA;

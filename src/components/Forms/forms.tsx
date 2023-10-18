@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FormStyled } from "./style";
-import CustomButton from "../Buttons/buttons";
 
 interface FormComponentProps {
   type: string;
@@ -40,14 +39,7 @@ const FormComponent: React.FC<FormComponentProps> = ({
         value={formData[name] || ""}
         onChange={handleInputChange}
       />
-      <CustomButton
-        backgroundColor="var(--grey6)"
-        textColor="var(--grey0)"
-        onClick={handleSubmit}
-        label="Text Button"
-      >
-        Submit
-      </CustomButton>
+      <button>Submit</button>
     </FormStyled>
   );
 };

@@ -1,6 +1,5 @@
 import CustomButton from "../../components/Buttons/buttons";
 import CardAnuncio from "../../components/Cards/CardAnuncio/cardAnuncio";
-import CardComment from "../../components/Cards/CardComment/cardComment";
 import Footer from "../../components/Footer/footer";
 import FormComponent from "../../components/Forms/forms";
 import HeaderComponent from "../../components/Header/header";
@@ -59,18 +58,29 @@ export const Login = () => {
         onSubmit={handleFormSubmit}
       />
 
-      <CardAnuncio
-        carroNome="Mercedes"
-        carroDescricao="Lorem Iosynm dfsdasd, ewwasd"
-        anuncianteNome="Felipe Martins"
-        anuncianteImagemSrc="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
-        carroImagemSrc="https://cdn.motor1.com/images/mgl/bgmkom/s3/mercedes-amg-cla-45-falando-de-carro.webp"
-        carroKm={45000}
-        carroAno={2019}
-        carroValor={157000}
-      />
+      <ul>
+        <CardAnuncio
+          carroNome="Mercedes"
+          carroDescricao="Lorem Iosynm dfsdasd, ewwasd"
+          anuncianteNome="Felipe Martins"
+          anuncianteImagemSrc="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+          carroImagemSrc="https://cdn.motor1.com/images/mgl/bgmkom/s3/mercedes-amg-cla-45-falando-de-carro.webp"
+          carroKm={45000}
+          carroAno={2019}
+          carroValor={100000}
+        />
 
-      <CardComment />
+        <CardAnuncio
+          carroNome="Mercedes"
+          carroDescricao="Lorem Iosynm dfsdasd, ewwasd"
+          anuncianteNome="Felipe Martins"
+          anuncianteImagemSrc="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+          carroImagemSrc="https://cdn.motor1.com/images/mgl/bgmkom/s3/mercedes-amg-cla-45-falando-de-carro.webp"
+          carroKm={45000}
+          carroAno={2019}
+          carroValor={157000}
+        />
+      </ul>
 
       <Footer />
     </>

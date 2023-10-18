@@ -21,6 +21,11 @@ const CardAnuncio: React.FC<CardAnuncioProps> = ({
   carroAno,
   carroValor,
 }) => {
+  const formattedCarroValor = carroValor.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  });
   return (
     <CardAnuncioStyled className="card-anuncio">
       <img src={carroImagemSrc} alt={carroNome} />
@@ -32,9 +37,11 @@ const CardAnuncio: React.FC<CardAnuncioProps> = ({
       </div>
       <div className="carro-info">
         <div className="carro-tags">
-          <span>{carroKm}</span>
-          <span>{carroAno}</span>
-          <p>R$ {carroValor}</p>
+          <div className="tags-span">
+            <span className="span-km">{carroKm} KM</span>
+            <span>{carroAno}</span>
+          </div>
+          <p>{formattedCarroValor}</p>
         </div>
       </div>
     </CardAnuncioStyled>
