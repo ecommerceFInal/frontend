@@ -1,3 +1,4 @@
+import CustomButtonSmall from "../../components/Buttons/ButtonSmall/buttonSmall";
 import CustomButton from "../../components/Buttons/buttons";
 import CardAnuncio from "../../components/Cards/CardAnuncio/cardAnuncio";
 import Footer from "../../components/Footer/footer";
@@ -29,24 +30,33 @@ export const Login = () => {
         onLoginClick={handleLoginClick}
         onRegisterClick={handleRegisterClick}
       />
-
       <CustomButton
         backgroundColor="black"
         textColor="#fff"
         onClick={handleButtonClick}
         label="Text Button"
       />
-
       <CustomButton
         backgroundColor="var(--grey6)"
         textColor="var(--grey0)"
         onClick={handleButtonClick}
         label="Text Button"
       />
-
       <CustomButton
         backgroundColor="var(--brand1)"
         textColor="var(--whiteFixed)"
+        onClick={handleButtonClick}
+        label="Text Button"
+      />
+      <CustomButton
+        backgroundColor="var(--alert1)"
+        textColor="var(--grey1)"
+        onClick={handleButtonClick}
+        label="Butão"
+      />
+      <CustomButtonSmall
+        backgroundColor="black"
+        textColor="#fff"
         onClick={handleButtonClick}
         label="Text Button"
       />
@@ -57,7 +67,6 @@ export const Login = () => {
         name="Email"
         onSubmit={handleFormSubmit}
       />
-
       <ul>
         <CardAnuncio
           carroNome="Mercedes"
@@ -81,7 +90,6 @@ export const Login = () => {
           carroValor={157000}
         />
       </ul>
-
       <Footer />
     </>
   );
