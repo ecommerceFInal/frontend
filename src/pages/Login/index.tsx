@@ -1,14 +1,12 @@
-import CustomButtonSmall from "../../components/Buttons/ButtonSmall/buttonSmall";
-import CustomButton from "../../components/Buttons/buttons";
-import CardAnuncio from "../../components/Cards/CardAnuncio/cardAnuncio";
+import { useState } from "react";
 import Footer from "../../components/Footer/footer";
-import FormComponent from "../../components/Forms/forms";
 import HeaderComponent from "../../components/Header/header";
+import InputWithLabel from "../../components/Input/inputs";
+import { FormStyled, MainStyled } from "./styled";
 
 export const Login = () => {
-  const handleFormSubmit = (data: { [key: string]: string }) => {
-    console.log(data);
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLoginClick = () => {
     // Lógica para lidar com o clique em "Fazer Login"
@@ -20,8 +18,12 @@ export const Login = () => {
     console.log("Clicou em Cadastrar");
   };
 
-  const handleButtonClick = () => {
-    console.log("clickou");
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
   };
 
   return (
@@ -30,66 +32,33 @@ export const Login = () => {
         onLoginClick={handleLoginClick}
         onRegisterClick={handleRegisterClick}
       />
-      <CustomButton
-        backgroundColor="black"
-        textColor="#fff"
-        onClick={handleButtonClick}
-        label="Text Button"
-      />
-      <CustomButton
-        backgroundColor="var(--grey6)"
-        textColor="var(--grey0)"
-        onClick={handleButtonClick}
-        label="Text Button"
-      />
-      <CustomButton
-        backgroundColor="var(--brand1)"
-        textColor="var(--whiteFixed)"
-        onClick={handleButtonClick}
-        label="Text Button"
-      />
-      <CustomButton
-        backgroundColor="var(--alert1)"
-        textColor="var(--grey1)"
-        onClick={handleButtonClick}
-        label="Butão"
-      />
-      <CustomButtonSmall
-        backgroundColor="black"
-        textColor="#fff"
-        onClick={handleButtonClick}
-        label="Text Button"
-      />
+      <MainStyled>
+        <FormStyled className="login-form">
+          <h2>Login</h2>
+          <InputWithLabel
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            label="Email"
+            onChange={handleEmailChange}
+          />
 
-      <FormComponent
-        type="email"
-        id="email"
-        name="Email"
-        onSubmit={handleFormSubmit}
-      />
-      <ul>
-        <CardAnuncio
-          carroNome="Mercedes"
-          carroDescricao="Lorem Iosynm dfsdasd, ewwasd"
-          anuncianteNome="Felipe Martins"
-          anuncianteImagemSrc="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
-          carroImagemSrc="https://cdn.motor1.com/images/mgl/bgmkom/s3/mercedes-amg-cla-45-falando-de-carro.webp"
-          carroKm={45000}
-          carroAno={2019}
-          carroValor={100000}
-        />
+          <InputWithLabel
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            label="Senha"
+            onChange={handlePasswordChange}
+          />
 
-        <CardAnuncio
-          carroNome="Mercedes"
-          carroDescricao="Lorem Iosynm dfsdasd, ewwasd"
-          anuncianteNome="Felipe Martins"
-          anuncianteImagemSrc="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
-          carroImagemSrc="https://cdn.motor1.com/images/mgl/bgmkom/s3/mercedes-amg-cla-45-falando-de-carro.webp"
-          carroKm={45000}
-          carroAno={2019}
-          carroValor={157000}
-        />
-      </ul>
+          <a href="#">Esqueci minha senha</a>
+          <button type="submit">Entrar</button>
+          <p>Ainda não possui conta?</p>
+          <a href="#">Cadastrar</a>
+        </FormStyled>
+      </MainStyled>
       <Footer />
     </>
   );
